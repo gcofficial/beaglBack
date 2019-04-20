@@ -39,10 +39,9 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
     "morgan": "^1.9.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "socket.io": "^2.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",
@@ -99,10 +98,7 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "bugs": {
-    "url": "https://github.com/vmasto/express-babel/issues"
-  },
-  "homepage": "https://github.com/vmasto/express-babel#readme",
+  "homepage": "http://beagl.io",
   "directories": {
     "test": "test"
   }

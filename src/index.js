@@ -1,4 +1,6 @@
-import app from './app';
+import io from 'socket.io';
+import connection from './sockets/connection';
 
-const { PORT = 8080 } = process.env;
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`)); // eslint-disable-line no-console
+const { SOCKET_PORT = 13665 } = process.env;
+const sockets = io(SOCKET_PORT);
+var tmp = sockets.on('connection', connection);
