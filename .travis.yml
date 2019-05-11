@@ -12,7 +12,10 @@ script:
   - chmod 600 ./beaglBack
   - cat ./beaglBack
   - ssh-add ./beaglBack
-  - ssh -tt $SSH_HOST "echo \"Hello world\""
+  - ssh $SSH_HOST << EOF
+  - echo "Hello world"
+  - exit $?
+  - EOF
 after_success:
 - npm run report-coverage
 before_install:
