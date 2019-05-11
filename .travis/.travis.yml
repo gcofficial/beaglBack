@@ -1,0 +1,23 @@
+dist: trusty
+sudo: false
+language: node_js
+node_js:
+- stable
+addons:
+  ssh_known_hosts:
+  - 145.14.158.14
+script:
+- npm i
+- npm run test
+- echo $SSH_KEY >> ~/.ssh/beaglBack
+- chmod 600 ~/.ssh/beaglBack
+- cat ~/.ssh/beaglBack
+- ssh-add ~/.ssh/beaglBack
+- ssh -tt $SSH_HOST << EOF
+- echo "Hello world"
+- EOF
+after_success:
+- npm run report-coverage
+before_install:
+- openssl aes-256-cbc -K $encrypted_046d935b06c7_key -iv $encrypted_046d935b06c7_iv
+  -in beaglBack.enc -out ~\/.ssh/beaglBack -d
