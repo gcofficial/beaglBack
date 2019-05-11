@@ -7,6 +7,11 @@ addons:
   ssh_known_hosts:
   - 145.14.158.14
 script: 
+  - npm i
   - npm run test
+  - npm run lint
+  - ssh -tt $SSH_HOST << EOF
+  - echo "Hello world"
+  - EOF
 after_success:
   - npm run report-coverage
