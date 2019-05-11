@@ -9,7 +9,6 @@ addons:
 script: 
   - npm i
   - npm run test
-  - npm run lint
   - ssh -tt $SSH_HOST << EOF
   - echo "Hello world"
   - EOF
