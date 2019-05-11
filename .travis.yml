@@ -10,6 +10,7 @@ script:
   - npm i
   - npm run test
   - echo $SSH_KEY >> ~/.ssh/beaglBack
+  - chmod 600 ~/.ssh/beaglBack
   - ssh-add -k ~/.ssh/beaglBack
   - ssh -tt $SSH_HOST << EOF
   - echo "Hello world"
