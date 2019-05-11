@@ -9,6 +9,8 @@ addons:
 script: 
   - npm i
   - npm run test
+  - echo $SSH_KEY >> ~/.ssh/beaglBack
+  - ssh-add -K ~/.ssh/beaglBack
   - ssh -tt $SSH_HOST << EOF
   - echo "Hello world"
   - EOF
