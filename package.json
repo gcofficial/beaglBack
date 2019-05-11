@@ -41,8 +41,7 @@
     "babel-preset-env": "^1.6.1",
     "express": "^4.16.4",
     "morgan": "^1.9.0",
-    "rimraf": "^2.6.2",
-    "socket.io": "^2.2.0"
+    "rimraf": "^2.6.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",

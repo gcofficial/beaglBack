@@ -1,15 +1,13 @@
-import io from 'socket.io';
 import express from 'express';
-import connection from './sockets/connection';
+import logger from 'morgan';
 
 const {
-  SOCKET_PORT = 13665,
   REQUEST_PORT = 13667
 } = process.env;
-const sockets = io(SOCKET_PORT);
-var tmp = sockets.on('connection', connection);
 
 let app = express();
+
+app.use(logger('dev'));
 
 app.listen(REQUEST_PORT, () => {
   const log = console.log
@@ -17,7 +15,7 @@ app.listen(REQUEST_PORT, () => {
   log(`Server listening on http://localhost:${REQUEST_PORT}/ ..`)
   log('\n')
 
-  log(`Much fun! :) Egegej`);
+  log(`Much fun! :)`);
   log('\n')
 });
 
