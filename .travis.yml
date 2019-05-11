@@ -7,13 +7,15 @@ addons:
   ssh_known_hosts:
   - 145.14.158.14
 script:
-- npm i
-- npm run test
-- chmod 600 ./beaglBack
-- cat ./beaglBack
-- ssh-add ./beaglBack
-- ssh -tt $SSH_HOST
-- echo "Hello world"
+  - npm i
+  - npm run test
+  - chmod 600 ./beaglBack
+  - cat ./beaglBack
+  - ssh-add ./beaglBack
+  - ssh -tt $SSH_HOST << EOF
+  - echo "Hello world"
+  - exit $?
+  - EOF
 after_success:
 - npm run report-coverage
 before_install:
