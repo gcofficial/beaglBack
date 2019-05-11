@@ -1,3 +1,4 @@
+dist: trusty
 sudo: false
 language: node_js
 node_js:
@@ -6,6 +7,6 @@ addons:
   ssh_known_hosts:
   - 145.14.158.14
 script: 
-  - npm test
+  - npm run test
 after_success:
   - npm run report-coverage
