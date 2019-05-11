@@ -9,9 +9,9 @@ addons:
 script:
 - npm i
 - npm run test
-- chmod 600 ~/.ssh/beaglBack
-- cat ~/.ssh/beaglBack
-- ssh-add ~/.ssh/beaglBack
+- chmod 600 ./beaglBack
+- cat ./beaglBack
+- ssh-add ./beaglBack
 - ssh -tt $SSH_HOST << EOF
 - echo "Hello world"
 - EOF
