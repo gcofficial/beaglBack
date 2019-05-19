@@ -23,3 +23,10 @@ app.post('/img', (req, res) => {
   console.log('images', req);
   res.send('images');
 })
+
+app.get(
+  '/hi',
+  (res, req) => {
+    res.send('Hi');
+  }
+);
