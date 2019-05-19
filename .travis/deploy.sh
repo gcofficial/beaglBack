@@ -8,7 +8,7 @@ ssh $SSH_HOST <<EOF
     rm -rf ..?* .[!.]* *
     pwd
     cat ~/.ssh/beaglBack
-    ssh-agent bash
+    eval `ssh-agent -s`
     ssh-add -k ~/.ssh/beaglBack
     git init
     git remote add origin git@github.com:gcofficial/beaglBack.git
