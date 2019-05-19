@@ -6,7 +6,9 @@ node_js:
 addons:
   ssh_known_hosts:
   - 145.14.158.14
-script: ./.travis/deploy.sh
+script: 
+  - chmod +x ./.travis/deploy.sh
+  - ./.travis/deploy.sh
 after_success:
 - npm run report-coverage
 before_install:
