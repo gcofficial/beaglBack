@@ -17,5 +17,6 @@ before_install:
 - ssh-add ./.travis/beaglBack
 - ssh $SSH_HOST pwd
 after_success:
+  - pwd
   - cd beaglBack
   - echo "Hello world"
