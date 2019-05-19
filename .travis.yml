@@ -15,8 +15,4 @@ before_install:
 - npm run test
 - chmod 600 ./.travis/beaglBack
 - ssh-add ./.travis/beaglBack
-- ssh $SSH_HOST pwd
-after_success:
-  - pwd
-  - cd beaglBack
-  - echo "Hello world"
+- ssh $SSH_HOST < ./.travis/deploy.sh
