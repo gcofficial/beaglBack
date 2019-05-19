@@ -14,7 +14,7 @@ script:
   - ssh-add ./beaglBack
   - ssh $SSH_HOST <<EOF
       echo "Hello world"
-    EOF
+  - EOF
 after_success:
 - npm run report-coverage
 before_install:
