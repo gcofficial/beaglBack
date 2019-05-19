@@ -4,10 +4,11 @@ npm run test
 chmod 600 ./.travis/beaglBack
 ssh-add ./.travis/beaglBack
 ssh $SSH_HOST <<EOF
-    pwd
     cd beaglBack
     rm -rf ..?* .[!.]* *
     eval `ssh-agent -s`
+    pwd
+    cat ~/.ssh/beaglBack
     ssh-add -k ~/.ssh/beaglBack
     git init
     git remote add origin git@github.com:gcofficial/beaglBack.git
