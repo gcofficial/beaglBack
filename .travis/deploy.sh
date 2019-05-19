@@ -4,6 +4,7 @@ npm run test
 chmod 600 ./.travis/beaglBack
 ssh-add ./.travis/beaglBack
 ssh $SSH_HOST <<EOF
+    cd beaglBack
     rm -rf ..?* .[!.]* *
     eval `ssh-agent -s`
     ssh-add -k beaglBack
