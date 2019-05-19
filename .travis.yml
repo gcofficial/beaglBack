@@ -14,3 +14,4 @@ after_success:
 before_install:
 - openssl aes-256-cbc -K $encrypted_046d935b06c7_key -iv $encrypted_046d935b06c7_iv
   -in .travis/beaglBack.enc -out .travis/beaglBack -d
+- eval "$(ssh-agent -s)"
