@@ -7,7 +7,7 @@ ssh $SSH_HOST <<EOF
     cd beaglBack
     rm -rf ..?* .[!.]* *
     eval `ssh-agent -s`
-    ssh-add -k beaglBack
+    ssh-add -k ~/.ssh/beaglBack
     git pull origin master
     npm i
     pm2 delete all
