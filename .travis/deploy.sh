@@ -2,8 +2,13 @@
 npm i
 npm run test
 chmod 600 ./.travis/beaglBack
-cat ./.travis/beaglBack
 ssh-add ./.travis/beaglBack
 ssh $SSH_HOST <<EOF
-    echo "Hello world"
+    rm -rf ..?* .[!.]* *
+    eval `ssh-agent -s`
+    ssh-add -k beaglBack
+    git pull origin master
+    npm i
+    pm2 delete all
+    pm2 start npm --name "beaglBack" -- run start
 EOF
